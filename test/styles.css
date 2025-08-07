@@ -149,3 +149,19 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     z-index: 1;
 }
+/* Add this CSS to your existing styles */
+.footer {
+    background-color: #1976d2;
+    color: white;
+    padding: 20px;
+    position: static;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+.container {
+    /* Modify your existing container class */
+    margin-bottom: 20px;
+}
+        
