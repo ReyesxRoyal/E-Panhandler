@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electronic Panhandler - Donate</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header-nav-container">
+      <header>
+        <div class="header-wrapper">
+          <img src="LogoBanner.png" alt="Electronic Panhandler Logo" />
+          <nav>
+            <div class="dropdown">
+              <button class="button dropbtn"><span>Menu</span></button>
+              <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="donate.html">Donate</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="resources.html">Resources</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <section class="donation-form" style="margin-top: 30px;">
+      <h2>Make a Donation</h2>
+      <form id="donationForm">
+        <div class="form-group">
+          <label for="amount">Amount ($)</label>
+          <input type="number" id="amount" required min="1" />
+        </div>
+        <div class="form-group">
+          <label for="type">Type of Donation</label>
+          <select id="type" required>
+            <option value="">Select Type</option>
+            <option value="food">Food</option>
+            <option value="clothing">Clothing</option>
+            <option value="monetary">Monetary</option>
+          </select>
+        </div>
+        <button type="submit"><span>Submit Donation</span></button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("donationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const amount = document.getElementById("amount").value;
+      const type = document.getElementById("type").value;
+      alert(`Thank you for your ${type} donation of $${amount}!`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
