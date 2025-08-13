@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electronic Panhandler</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLq4IzeOgDqlZHa2FViAkrdQxlG72IuRk"
+  ></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header-nav-container">
+      <header>
+        <div class="header-wrapper">
+          <img src="LogoBanner.png" alt="Electronic Panhandler Logo" />
+          <nav>
+            <div class="dropdown">
+              <button class="button dropbtn"><span>Menu</span></button>
+              <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="donate.html">Donate</a>
+                <a href="statistics.html">Statistics</a>
+                <a href="resources.html">Resources</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+
+    <div class="hero-donation-wrapper">
+      <section class="hero">
+        <h1>Help Your Local Community</h1>
+        <p>Make a difference in your neighborhood today!</p>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="donation-form">
+        <h2>Make a Donation</h2>
+        <form id="donationForm">
+          <div class="form-group">
+            <label for="amount">Amount ($)</label>
+            <input type="number" id="amount" required min="1" />
+          </div>
+          <div class="form-group">
+            <label for="type">Type of Donation</label>
+            <select id="type" required>
+              <option value="">Select Type</option>
+              <option value="food">Food</option>
+              <option value="clothing">Clothing</option>
+              <option value="monetary">Monetary</option>
+            </select>
+          </div>
+          <button type="submit"><span>Submit Donation</span></button>
+        </form>
+      </section>
+    </div>
+
+    <div id="video" class="video-section">
+      <h2>See How It Works + Hear Their Story</h2>
+      <p>This feature helps individuals create a personal connection with potential donors.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+        <div style="flex: 1 1 45%; min-width: 300px;">
+          <h3>How to Sign Up</h3>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_HOW_TO_VIDEO_ID"
+              frameborder="0"
+              allowfullscreen
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            ></iframe>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 45%; min-width: 300px;">
+          <h3>A Personal Story</h3>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_PANHANDLER_VIDEO_ID"
+              frameborder="0"
+              allowfullscreen
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("donationForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const amount = document.getElementById("amount").value;
+        const type = document.getElementById("type").value;
+        alert(`Thank you for your ${type} donation of $${amount}!`);
+        this.reset();
+      });
+    </script>
+
+    <footer>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
